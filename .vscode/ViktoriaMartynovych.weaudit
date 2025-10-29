@@ -1,0 +1,32 @@
+{
+  "clientRemote": "",
+  "gitRemote": "",
+  "gitSha": "",
+  "treeEntries": [
+    {
+      "label": "Test",
+      "entryType": 0,
+      "author": "ViktoriaMartynovych",
+      "details": {
+        "severity": "High",
+        "difficulty": "High",
+        "type": "Cryptography",
+        "description": "Test",
+        "exploit": "Test",
+        "recommendation": "Test\n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/main.cpp",
+          "startLine": 51,
+          "endLine": 52,
+          "label": "",
+          "description": ""
+        }
+      ]
+    }
+  ],
+  "auditedFiles": [],
+  "partiallyAuditedFiles": [],
+  "resolvedEntries": []
+}
