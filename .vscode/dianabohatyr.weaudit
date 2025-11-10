@@ -24,6 +24,182 @@
           "description": ""
         }
       ]
+    },
+    {
+      "label": "outdated libraries",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "High",
+        "difficulty": "Low",
+        "type": "Data Exposure",
+        "description": "Very old libraries. Using these over //code.jquery.com without HTTPS enforcement is dangerous. If the device or network doesn’t enforce HTTPS, an attacker could inject malicious scripts. It is better to use newer library.",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/sta_home.html",
+          "startLine": 4,
+          "endLine": 5,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "secrets stored in localStorage",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "Medium",
+        "difficulty": "Medium",
+        "type": "Access Controls",
+        "description": "localStorage is accessible to any script running on the same origin. If an attacker can inject JS (XSS) or another endpoint on the device is compromised, the dkey can be read.",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/sta_home.html",
+          "startLine": 174,
+          "endLine": 174,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "hardcoded link",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "Low",
+        "difficulty": "Low",
+        "type": "",
+        "description": "If firmware version changes, this link becomes outdated. It is better to generate link based on version.",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/sta_home.html",
+          "startLine": 153,
+          "endLine": 153,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "inline style",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "Low",
+        "difficulty": "Low",
+        "type": "",
+        "description": "It is better to move all inline styles to a stylesheet.",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/sta_home.html",
+          "startLine": 47,
+          "endLine": 47,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "magic number",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "Low",
+        "difficulty": "Low",
+        "type": "",
+        "description": "This number occurs many times and needs to be in a constant.",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/sta_home.html",
+          "startLine": 191,
+          "endLine": 191,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "sending secrets in URL",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "High",
+        "difficulty": "Medium",
+        "type": "Data Exposure",
+        "description": "The authentication key is sent in the URL as a query string. It is insecure, because URLs are often logged by browsers, proxies, and servers and can appear in browser history. GET quests don't hide parameters, so it is better to use POST.",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/sta_home.html",
+          "startLine": 201,
+          "endLine": 203,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "no input validation",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/sta_home.html",
+          "startLine": 173,
+          "endLine": 173,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "magic numbers",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "Low",
+        "difficulty": "Low",
+        "type": "",
+        "description": "We don't know the meaning of these numbers. Better to have them as constants.",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/sta_home.html",
+          "startLine": 368,
+          "endLine": 368,
+          "label": "",
+          "description": ""
+        }
+      ]
     }
   ],
   "auditedFiles": [],
