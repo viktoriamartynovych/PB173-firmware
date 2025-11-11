@@ -266,6 +266,72 @@
           "description": ""
         }
       ]
+    },
+    {
+      "label": "no file size validation",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "Medium",
+        "difficulty": "Medium",
+        "type": "Denial of Service",
+        "description": "There's no file size limit check before sending.",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/ap_update.html",
+          "startLine": 142,
+          "endLine": 142,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "font is deprecated",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "Low",
+        "difficulty": "Low",
+        "type": "",
+        "description": "<font> is deprecated, need to use CSS Fonts properties instead",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/ap_update.html",
+          "startLine": 124,
+          "endLine": 124,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "very long timeout",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "Medium",
+        "difficulty": "Low",
+        "type": "",
+        "description": "Very long timeout with no cancel and weak user feedback.",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/ap_update.html",
+          "startLine": 181,
+          "endLine": 181,
+          "label": "",
+          "description": ""
+        }
+      ]
     }
   ],
   "auditedFiles": [
@@ -275,6 +341,10 @@
     },
     {
       "path": "OpenGarage/html/sta_home.html",
+      "author": "dianabohatyr"
+    },
+    {
+      "path": "OpenGarage/html/ap_update.html",
       "author": "dianabohatyr"
     }
   ],

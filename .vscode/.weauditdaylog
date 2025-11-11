@@ -3,7 +3,8 @@
     "Tue Nov 11 2025",
     [
       "OpenGarage/html/ap_home.html",
-      "OpenGarage/html/sta_home.html"
+      "OpenGarage/html/sta_home.html",
+      "OpenGarage/html/ap_update.html"
     ]
   ]
 ]
