@@ -200,9 +200,84 @@
           "description": ""
         }
       ]
+    },
+    {
+      "label": "sensitive credentials transmitted via GET",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "High",
+        "difficulty": "Medium",
+        "type": "",
+        "description": "Because we use plain GET, the password and token are visible in the browser history, logs",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/ap_home.html",
+          "startLine": 406,
+          "endLine": 426,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "unauthenticated open endpoints",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "High",
+        "difficulty": "Medium",
+        "type": "Access Controls",
+        "description": "Unauthenticated open endpoints (/jt, /cc, /js) allow anyone on the same Wi-Fi to trigger configuration.",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/ap_home.html",
+          "startLine": 379,
+          "endLine": 379,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "/ad is an unauthenticated endpoint",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "Medium",
+        "difficulty": "Medium",
+        "type": "",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/ap_home.html",
+          "startLine": 459,
+          "endLine": 459,
+          "label": "",
+          "description": ""
+        }
+      ]
     }
   ],
-  "auditedFiles": [],
+  "auditedFiles": [
+    {
+      "path": "OpenGarage/html/ap_home.html",
+      "author": "dianabohatyr"
+    },
+    {
+      "path": "OpenGarage/html/sta_home.html",
+      "author": "dianabohatyr"
+    }
+  ],
   "partiallyAuditedFiles": [],
   "resolvedEntries": []
 }
