@@ -332,6 +332,28 @@
           "description": ""
         }
       ]
+    },
+    {
+      "label": "very old libraries",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "Medium",
+        "difficulty": "Medium",
+        "type": "",
+        "description": "These are very old libraries with known vulnerabilities. Need to upgrade",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/sta_logs.html",
+          "startLine": 5,
+          "endLine": 15,
+          "label": "",
+          "description": ""
+        }
+      ]
     }
   ],
   "auditedFiles": [
@@ -345,6 +367,10 @@
     },
     {
       "path": "OpenGarage/html/ap_update.html",
+      "author": "dianabohatyr"
+    },
+    {
+      "path": "OpenGarage/html/sta_logs.html",
       "author": "dianabohatyr"
     }
   ],

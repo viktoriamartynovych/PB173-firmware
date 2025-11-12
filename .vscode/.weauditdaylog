@@ -6,5 +6,11 @@
       "OpenGarage/html/sta_home.html",
       "OpenGarage/html/ap_update.html"
     ]
+  ],
+  [
+    "Wed Nov 12 2025",
+    [
+      "OpenGarage/html/sta_logs.html"
+    ]
   ]
 ]
