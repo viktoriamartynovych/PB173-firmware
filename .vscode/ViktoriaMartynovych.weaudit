@@ -4,29 +4,78 @@
   "gitSha": "",
   "treeEntries": [
     {
-      "label": "Test",
+      "label": "Device key exposed in GET request",
       "entryType": 0,
       "author": "ViktoriaMartynovych",
       "details": {
         "severity": "High",
-        "difficulty": "High",
-        "type": "Cryptography",
-        "description": "Test",
-        "exploit": "Test",
-        "recommendation": "Test\n"
+        "difficulty": "Medium",
+        "type": "Data Exposure",
+        "description": "The handler accepts the device key from the URL query string, therefore could be retrieved in logs",
+        "exploit": "If the attacker has an access to local network to which device is connected, it can get the logs where the device key will be exposed in quesry string of GET requests",
+        "recommendation": "Use POST instead of GET request or require Authorization header"
       },
       "locations": [
         {
           "path": "OpenGarage/main.cpp",
-          "startLine": 51,
-          "endLine": 52,
+          "startLine": 415,
+          "endLine": 415,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Pop from empty buffer",
+      "entryType": 1,
+      "author": "ViktoriaMartynovych",
+      "details": {
+        "severity": "Medium",
+        "difficulty": "Low",
+        "type": "Undefined Behavior",
+        "description": "Directly in method there is no checking if buffer is not empty before pop. In the code pop() is used after checking size of buffer, which is okay. However to prevent new bugs (for example from new code mainteners), it is better to ckeck size implicitly in method, rather than do it explicitly.",
+        "exploit": "",
+        "recommendation": "Add check of size - size > 0, before perfoming pop()"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/.pio/libdeps/d1_mini/garagelib/garagelib.cpp",
+          "startLine": 57,
+          "endLine": 60,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Not proven info",
+      "entryType": 1,
+      "author": "ViktoriaMartynovych",
+      "details": {
+        "severity": "Undetermined",
+        "difficulty": "Undetermined",
+        "type": "Undefined Behavior",
+        "description": "From developer's comments",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/.pio/libdeps/d1_mini/garagelib/garagelib.cpp",
+          "startLine": 562,
+          "endLine": 562,
           "label": "",
           "description": ""
         }
       ]
     }
   ],
-  "auditedFiles": [],
+  "auditedFiles": [
+    {
+      "path": "OpenGarage/.pio/libdeps/d1_mini/garagelib/garagelib.cpp",
+      "author": "ViktoriaMartynovych"
+    }
+  ],
   "partiallyAuditedFiles": [],
   "resolvedEntries": []
 }
