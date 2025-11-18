@@ -354,6 +354,28 @@
           "description": ""
         }
       ]
+    },
+    {
+      "label": "no file size check",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "Medium",
+        "difficulty": "Medium",
+        "type": "Denial of Service",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/sta_update.html",
+          "startLine": 94,
+          "endLine": 94,
+          "label": "",
+          "description": ""
+        }
+      ]
     }
   ],
   "auditedFiles": [
@@ -371,6 +393,10 @@
     },
     {
       "path": "OpenGarage/html/sta_logs.html",
+      "author": "dianabohatyr"
+    },
+    {
+      "path": "OpenGarage/html/sta_update.html",
       "author": "dianabohatyr"
     }
   ],
