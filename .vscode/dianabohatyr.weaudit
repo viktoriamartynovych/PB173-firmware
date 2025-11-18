@@ -376,6 +376,72 @@
           "description": ""
         }
       ]
+    },
+    {
+      "label": "sensetive credentials sent in URL query",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "High",
+        "difficulty": "",
+        "type": "Data Exposure",
+        "description": "Device key and other secrets (cloud tokens, MQTT password, SMTP password, etc.) are sent via GET. ",
+        "exploit": "URL will appear in server logs, browser history, intermediere cahnces, etc. An attacker on the same Wi-Fi can acces logs or backups and retrieve keys.",
+        "recommendation": "Use POST and send secrets in request body, so they are not kept in server logs."
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/sta_options.html",
+          "startLine": 699,
+          "endLine": 699,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "persistent client-side storage of secret",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "High",
+        "difficulty": "Medium",
+        "type": "Data Exposure",
+        "description": "Saving the device key in plain text in the browser's localStorage.",
+        "exploit": "Any script running on the same origin can read localStorage and steal the key. Browser extensions or local malware can read localStorage.",
+        "recommendation": ""
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/sta_options.html",
+          "startLine": 494,
+          "endLine": 494,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "outdated libraries",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "Medium",
+        "difficulty": "",
+        "type": "",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/html/sta_options.html",
+          "startLine": 3,
+          "endLine": 5,
+          "label": "",
+          "description": ""
+        }
+      ]
     }
   ],
   "auditedFiles": [
@@ -397,6 +463,10 @@
     },
     {
       "path": "OpenGarage/html/sta_update.html",
+      "author": "dianabohatyr"
+    },
+    {
+      "path": "OpenGarage/html/sta_options.html",
       "author": "dianabohatyr"
     }
   ],
