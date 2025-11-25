@@ -1,0 +1,303 @@
+{
+  "clientRemote": "",
+  "gitRemote": "",
+  "gitSha": "",
+  "treeEntries": [
+    {
+      "label": "relatively heavy and increase ISR(Interrupt service routine) latency",
+      "entryType": 0,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "I/O-level calls in Interrupt service.\n",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 137,
+          "endLine": 138,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "uncheck ud_start",
+      "entryType": 0,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "No explicit defensive check that ud_start was set before computing micros() - ud_start",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 142,
+          "endLine": 142,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Race condition on triggered flag",
+      "entryType": 0,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Set triggered = true inside critical section to prevent race condition\n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 110,
+          "endLine": 123,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "No error reporting",
+      "entryType": 0,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "No verification that attach/Ticker succeeded or that sensor setup returned OK. Failures go unnoticed.",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 349,
+          "endLine": 369,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Race / inconsistent snapshot",
+      "entryType": 0,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "read_distance() copies ud_buffer[] without disabling interrupts",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 307,
+          "endLine": 307,
+          "label": "Magic constant",
+          "description": ""
+        },
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 304,
+          "endLine": 312,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Bad naming of variables",
+      "entryType": 0,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "When DS18B20 is selected the function never clears or sets H. Callers may see stale humidity from previous DHT reads.",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 371,
+          "endLine": 381,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Stale humidity value",
+      "entryType": 0,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 385,
+          "endLine": 391,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Bad naming",
+      "entryType": 0,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 170,
+          "endLine": 170,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "LED detection logic is blocking and slow",
+      "entryType": 0,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "Blocks entire device initialization; if called early in setup(), network/OTA may be affected",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 177,
+          "endLine": 184,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "No error handling on FILESYS.begin()",
+      "entryType": 0,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Should either retry, halt, or set an error flag"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 206,
+          "endLine": 208,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Setup",
+      "entryType": 1,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "Checks if config file exists; if not, saves default options\nIf exists, loads options from file\nOn firmware version change, updates version and re-saves (preserves backward compatibility)",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 210,
+          "endLine": 210,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Factory reset",
+      "entryType": 1,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 229,
+          "endLine": 229,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "No bounds checking on loaded integer values",
+      "entryType": 0,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "sval.toInt() without validating. Posible invalid configurations",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 275,
+          "endLine": 276,
+          "label": "",
+          "description": ""
+        }
+      ]
+    }
+  ],
+  "auditedFiles": [],
+  "partiallyAuditedFiles": [],
+  "resolvedEntries": []
+}
