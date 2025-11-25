@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>XHR GET Test</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			body {
+				font-family: system-ui, Segoe UI, Roboto, Arial;
+				margin: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>XHR GET reproduction</h2>
+		<p>
+			This page builds a GET URL the same way as the firmware and calls
+			<code>xhr.open("GET", comm, true)</code>.
+		</p>
+
+		<label>SSID: <input id="ssid" value="MySSID" /></label><br />
+		<label>Password: <input id="pass" value="SECRET123" /></label><br />
+		<label>Host: <input id="host" value="my-host" /></label><br />
+		<label>SecV: <input id="secv" value="0" /></label><br />
+		<button id="btn">Send XHR GET</button>
+		<button id="btn_post">Send XHR POST</button>
+
+		<h3>XHR events</h3>
+		<pre
+			id="log"
+			style="
+				background: #f7f7f7;
+				padding: 10px;
+				border-radius: 6px;
+				max-height: 300px;
+				overflow: auto;
+			"
+		></pre>
+
+		<script>
+			function id(s) {
+				return document.getElementById(s);
+			}
+			function append(msg) {
+				const p = id("log");
+				p.textContent += msg + "\n";
+				p.scrollTop = p.scrollHeight;
+			}
+
+			document.getElementById("btn").addEventListener("click", function () {
+				const ssid = encodeURIComponent(id("ssid").value);
+				const pass = encodeURIComponent(id("pass").value);
+				const host = encodeURIComponent(id("host").value);
+				const secv = encodeURIComponent(id("secv").value);
+
+				const comm = `/cc?ssid=${ssid}&pass=${pass}&host=${host}&secv=${secv}`;
+				append("Built comm: " + comm);
+
+				const xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function () {
+					append(
+						"readyState=" + xhr.readyState + " status=" + (xhr.status || "n/a")
+					);
+					if (xhr.readyState === 4) {
+						append("ResponseText: " + xhr.responseText);
+					}
+				};
+				// open and send exactly like firmware
+				xhr.open("GET", comm, true);
+				append("Calling xhr.send() now...");
+				xhr.send();
+			});
+
+			document
+				.getElementById("btn_post")
+				.addEventListener("click", function () {
+					const ssid = encodeURIComponent(id("ssid").value);
+					const pass = encodeURIComponent(id("pass").value);
+					const host = encodeURIComponent(id("host").value);
+					const secv = encodeURIComponent(id("secv").value);
+
+					// POST target is /cc; body uses application/x-www-form-urlencoded
+					const target = "/cc";
+					const body = `ssid=${ssid}&pass=${pass}&host=${host}&secv=${secv}`;
+					append("POST target: " + target);
+					append("POST body (url-encoded): " + body);
+
+					const xhr2 = new XMLHttpRequest();
+					xhr2.onreadystatechange = function () {
+						append(
+							"POST readyState=" +
+								xhr2.readyState +
+								" status=" +
+								(xhr2.status || "n/a")
+						);
+						if (xhr2.readyState === 4) {
+							append("POST ResponseText: " + xhr2.responseText);
+						}
+					};
+					xhr2.open("POST", target, true);
+					xhr2.setRequestHeader(
+						"Content-Type",
+						"application/x-www-form-urlencoded"
+					);
+					append("Calling xhr.send(body) now...");
+					xhr2.send(body);
+				});
+		</script>
+	</body>
+</html>

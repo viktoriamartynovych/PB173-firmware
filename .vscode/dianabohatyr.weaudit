@@ -209,7 +209,7 @@
         "severity": "High",
         "difficulty": "Medium",
         "type": "",
-        "description": "Because we use plain GET, the password and token are visible in the browser history, logs",
+        "description": "Because we use plain GET, the password and token are visible in the DevTools Network and are received (and thus logged) by servers and network observers.",
         "exploit": "",
         "recommendation": "Short term, \nLong term, \n"
       },
