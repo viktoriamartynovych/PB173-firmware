@@ -68,6 +68,160 @@
           "description": ""
         }
       ]
+    },
+    {
+      "label": "Commented code",
+      "entryType": 1,
+      "author": "ViktoriaMartynovych",
+      "details": {
+        "severity": "Informational",
+        "difficulty": "N/A",
+        "type": "",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/main.cpp",
+          "startLine": 833,
+          "endLine": 835,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Magic number",
+      "entryType": 1,
+      "author": "ViktoriaMartynovych",
+      "details": {
+        "severity": "Informational",
+        "difficulty": "N/A",
+        "type": "",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/main.cpp",
+          "startLine": 664,
+          "endLine": 664,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Magic number",
+      "entryType": 1,
+      "author": "ViktoriaMartynovych",
+      "details": {
+        "severity": "Informational",
+        "difficulty": "N/A",
+        "type": "",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/main.cpp",
+          "startLine": 668,
+          "endLine": 668,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Magic number",
+      "entryType": 1,
+      "author": "ViktoriaMartynovych",
+      "details": {
+        "severity": "Informational",
+        "difficulty": "N/A",
+        "type": "",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/main.cpp",
+          "startLine": 672,
+          "endLine": 672,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Magic number",
+      "entryType": 1,
+      "author": "ViktoriaMartynovych",
+      "details": {
+        "severity": "Informational",
+        "difficulty": "N/A",
+        "type": "",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/main.cpp",
+          "startLine": 677,
+          "endLine": 677,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Magic number",
+      "entryType": 1,
+      "author": "ViktoriaMartynovych",
+      "details": {
+        "severity": "Informational",
+        "difficulty": "N/A",
+        "type": "",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/main.cpp",
+          "startLine": 682,
+          "endLine": 682,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Integer overflow",
+      "entryType": 0,
+      "author": "ViktoriaMartynovych",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/main.cpp",
+          "startLine": 1035,
+          "endLine": 1035,
+          "label": "",
+          "description": ""
+        }
+      ]
     }
   ],
   "auditedFiles": [
