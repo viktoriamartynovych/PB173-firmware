@@ -19,5 +19,11 @@
       "OpenGarage/html/sta_update.html",
       "OpenGarage/html/sta_options.html"
     ]
+  ],
+  [
+    "Tue Dec 02 2025",
+    [
+      "OpenGarage/compress_htmls.mjs"
+    ]
   ]
 ]

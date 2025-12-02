@@ -442,6 +442,28 @@
           "description": ""
         }
       ]
+    },
+    {
+      "label": "commented asset table",
+      "entryType": 0,
+      "author": "dianabohatyr",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "Missing asset table. The script collects every item in items but never writes the lookup tables because this part of code is commented out",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/compress_htmls.mjs",
+          "startLine": 91,
+          "endLine": 97,
+          "label": "",
+          "description": ""
+        }
+      ]
     }
   ],
   "auditedFiles": [
@@ -467,6 +489,10 @@
     },
     {
       "path": "OpenGarage/html/sta_options.html",
+      "author": "dianabohatyr"
+    },
+    {
+      "path": "OpenGarage/compress_htmls.mjs",
       "author": "dianabohatyr"
     }
   ],
