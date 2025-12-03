@@ -206,10 +206,10 @@
       "entryType": 0,
       "author": "ViktoriaMartynovych",
       "details": {
-        "severity": "",
-        "difficulty": "",
-        "type": "",
-        "description": "",
+        "severity": "Low",
+        "difficulty": "Low",
+        "type": "Denial of Service",
+        "description": "Can calculate difference incorrect if   device is turned on for a long time, and do factory reset ",
         "exploit": "",
         "recommendation": "Short term, \nLong term, \n"
       },
@@ -218,6 +218,28 @@
           "path": "OpenGarage/main.cpp",
           "startLine": 1035,
           "endLine": 1035,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Integer overflow",
+      "entryType": 0,
+      "author": "ViktoriaMartynovych",
+      "details": {
+        "severity": "Low",
+        "difficulty": "Low",
+        "type": "Denial of Service",
+        "description": "Casting can lead to a negative number which will make the clause always false",
+        "exploit": "LED toggle logic would stop working after about 24.8 days of continuous operation, effectively preventing the LED from blinking",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage/main.cpp",
+          "startLine": 1066,
+          "endLine": 1066,
           "label": "",
           "description": ""
         }
