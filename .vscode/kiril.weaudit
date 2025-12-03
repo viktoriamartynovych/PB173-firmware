@@ -295,6 +295,160 @@
           "description": ""
         }
       ]
+    },
+    {
+      "label": "No error return / status on success/failure",
+      "entryType": 0,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "print debug but don't return bool",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 236,
+          "endLine": 236,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Log Size Inconsistency",
+      "entryType": 0,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "The log file is pre-allocated using the hardcoded MAX_LOG_SIZE. However, the circular buffer logic in write_log uses the user-configurable options[OPTION_LSZ].ival.",
+        "exploit": "If a user sets OPTION_LSZ to a value greater than MAX_LOG_SIZE, the code will attempt to seek and write outside the pre-allocated file area, leading to undefined behavior and file corruption.",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 421,
+          "endLine": 421,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "On the very first call, it creates the log file and pre-allocates it to MAX_LOG_SIZE by filling it with empty entries. This is a one-time, slow operation.",
+      "entryType": 1,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 399,
+          "endLine": 399,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "On subsequent calls, it opens the file, reads the current position index, writes the new log entry at that position, and updates the index to point to the next slot, wrapping around when it reaches the end.",
+      "entryType": 1,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 414,
+          "endLine": 414,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Blocking Execution",
+      "entryType": 0,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "",
+        "exploit": "It uses delay().\nThe entire microcontroller is blocked and cannot perform any other tasks, such as connecting to WiFi or responding to network requests. This significantly slows down the boot process.",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 482,
+          "endLine": 483,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "No error is logged",
+      "entryType": 0,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 470,
+          "endLine": 470,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "No Logical Validation",
+      "entryType": 0,
+      "author": "kiril",
+      "details": {
+        "severity": "",
+        "difficulty": "",
+        "type": "",
+        "description": "An invalid configuration will be accepted and will fail at connection time",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.cpp",
+          "startLine": 465,
+          "endLine": 468,
+          "label": "",
+          "description": ""
+        }
+      ]
     }
   ],
   "auditedFiles": [],
