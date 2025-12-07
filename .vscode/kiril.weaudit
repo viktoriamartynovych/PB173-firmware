@@ -323,9 +323,9 @@
       "entryType": 0,
       "author": "kiril",
       "details": {
-        "severity": "",
-        "difficulty": "",
-        "type": "",
+        "severity": "Low",
+        "difficulty": "Medium",
+        "type": "Auditing and Logging",
         "description": "The log file is pre-allocated using the hardcoded MAX_LOG_SIZE. However, the circular buffer logic in write_log uses the user-configurable options[OPTION_LSZ].ival.",
         "exploit": "If a user sets OPTION_LSZ to a value greater than MAX_LOG_SIZE, the code will attempt to seek and write outside the pre-allocated file area, leading to undefined behavior and file corruption.",
         "recommendation": "Short term, \nLong term, \n"
@@ -449,9 +449,58 @@
           "description": ""
         }
       ]
+    },
+    {
+      "label": "No String Length Limit",
+      "entryType": 0,
+      "author": "kiril",
+      "details": {
+        "severity": "Medium",
+        "difficulty": "Low",
+        "type": "Configuration",
+        "description": "There is no explicit size limit for sval. A very long string loaded from the config file could consume a large amount of RAM or, if sval were a fixed-size char array, cause a buffer overflow.",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.h",
+          "startLine": 35,
+          "endLine": 40,
+          "label": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "Struct Padding",
+      "entryType": 0,
+      "author": "kiril",
+      "details": {
+        "severity": "High",
+        "difficulty": "Low",
+        "type": "Auditing and Logging",
+        "description": "The struct contains ulong (4 bytes), two uints (2 bytes each), and a byte (1 byte), for a total of 9 bytes. Most compilers will add padding to align data on 2 or 4-byte boundaries, making sizeof(LogStruct) likely 10 or 12 bytes. Writing the raw struct with sizeof(LogStruct) is correct, but assuming a size of 9 bytes for manual file seeking this is a critical error.",
+        "exploit": "",
+        "recommendation": "Short term, \nLong term, \n"
+      },
+      "locations": [
+        {
+          "path": "OpenGarage\\OpenGarage.h",
+          "startLine": 42,
+          "endLine": 47,
+          "label": "",
+          "description": ""
+        }
+      ]
     }
   ],
-  "auditedFiles": [],
+  "auditedFiles": [
+    {
+      "path": "OpenGarage\\OpenGarage.cpp",
+      "author": "kiril"
+    }
+  ],
   "partiallyAuditedFiles": [],
   "resolvedEntries": []
 }
